@@ -1,0 +1,14 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dlip/code.git",
+  "author": "Dane Lipscombe <dane@lipscombe.com.au>",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
+  "dependencies": {
+    "lerna": "^3.13.1"
+  }
+}
