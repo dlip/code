@@ -13,10 +13,11 @@ export default class extends React.Component {
         x.node.sourceInstanceName === "coffeescript-breakout" &&
         x.node.base === "index.js"
     )
+    const urlPrefix = process.env === "production" ? data.site.pathPrefix : ""
     return (
       <>
         <Helmet>
-          <script src={file.node.publicURL} />
+          <script src={urlPrefix + file.node.publicURL} />
         </Helmet>
         <canvas id="coffeescript-breakout" width="300" height="300" />
       </>
@@ -26,6 +27,9 @@ export default class extends React.Component {
 
 export const query = graphql`
   query {
+    site {
+      pathPrefix
+    }
     allFile {
       edges {
         node {

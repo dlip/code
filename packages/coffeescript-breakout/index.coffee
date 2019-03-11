@@ -256,6 +256,9 @@ class Breakout
       sprite.update(@timer.diff)
       sprite.draw()
 
-elem = document.getElementById("coffeescript-breakout")
-breakout = new Breakout elem
-breakout.run()
+console.error("waiting")
+window.addEventListener "load", () ->
+  console.error("doc loaded")
+  elem = document.getElementById("coffeescript-breakout")
+  breakout = new Breakout elem
+  breakout.run()
