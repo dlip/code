@@ -4,11 +4,9 @@
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "coffee -t -o build -c index.coffee"
+    "build": "coffee -o build -c index.coffee"
   },
   "dependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
     "coffeescript": "^2.3.2"
   }
 }

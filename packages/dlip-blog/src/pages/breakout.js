@@ -1,15 +1,39 @@
 import React from "react"
-import Breakout from "coffeescript-breakout"
+import { Helmet } from "react-helmet"
+import { graphql } from "gatsby"
 
 export default class extends React.Component {
   shouldComponentUpdate() {
     return false
   }
-  componentDidMount() {
-    const breakout = new Breakout(this.refs._canvas)
-    breakout.run()
-  }
   render() {
-    return <canvas ref="_canvas" width="300" height="300" />
+    const { data } = this.props
+    const file = data.allFile.edges.find(
+      x =>
+        x.node.sourceInstanceName === "coffeescript-breakout" &&
+        x.node.base === "index.js"
+    )
+    return (
+      <>
+        <Helmet>
+          <script src={file.node.publicURL} />
+        </Helmet>
+        <canvas id="coffeescript-breakout" width="300" height="300" />
+      </>
+    )
   }
 }
+
+export const query = graphql`
+  query {
+    allFile {
+      edges {
+        node {
+          base
+          sourceInstanceName
+          publicURL
+        }
+      }
+    }
+  }
+`

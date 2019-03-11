@@ -256,4 +256,6 @@ class Breakout
       sprite.update(@timer.diff)
       sprite.draw()
 
-export default Breakout
+elem = document.getElementById("coffeescript-breakout")
+breakout = new Breakout elem
+breakout.run()

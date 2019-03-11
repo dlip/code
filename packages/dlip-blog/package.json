@@ -14,11 +14,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "coffeescript-breakout": "^1.0.0",
     "gatsby": "^2.1.27",
+    "gatsby-plugin-react-helmet": "^3.0.8",
+    "gatsby-source-filesystem": "^2.0.23",
     "gh-pages": "^2.0.1",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
